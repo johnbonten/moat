@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Linkedin, Twitter, Mail } from "lucide-react";
+import { Linkedin, Twitter } from "lucide-react";
 import { Logo } from "@/components/ui/Logo";
 import { Container } from "@/components/ui/Container";
 
