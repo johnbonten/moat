@@ -14,41 +14,30 @@ export function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen overflow-hidden pt-20">
-      {/* Animated gradient background */}
-      <div className="animated-gradient absolute inset-0 -z-10" />
-
-      {/* Subtle grid pattern */}
-      <div
-        className="absolute inset-0 -z-10 opacity-30"
-        style={{
-          backgroundImage: `radial-gradient(circle at 1px 1px, rgba(0,0,0,0.05) 1px, transparent 0)`,
-          backgroundSize: "40px 40px",
-        }}
-      />
-
-      <Container className="flex min-h-[calc(100vh-5rem)] flex-col justify-center py-16">
-        <div className="mx-auto max-w-4xl text-center">
+    <section className="relative flex min-h-screen flex-col items-center justify-center bg-white">
+      <Container className="flex flex-col items-center justify-center py-32">
+        <div className="mx-auto max-w-3xl text-center">
           {/* Logo */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            className="mb-8 flex justify-center"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="mb-12 flex justify-center"
           >
-            <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-foreground text-xl font-bold text-background">
+            <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-foreground text-sm font-semibold text-background">
               Moat
             </div>
           </motion.div>
 
           {/* Main headline */}
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="mb-6 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl"
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="mb-8 text-4xl font-semibold tracking-tight text-foreground sm:text-5xl md:text-6xl"
           >
-            AI-powered growth,{" "}
+            AI-powered growth,
+            <br />
             <span className="gradient-text">unlocked</span>
           </motion.h1>
 
@@ -56,8 +45,8 @@ export function Hero() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.4 }}
-            className="mx-auto mb-4 max-w-2xl text-lg text-muted md:text-xl"
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mx-auto mb-6 max-w-xl text-lg leading-relaxed text-muted"
           >
             We are a full-stack growth agency led by former tech operators. We
             help startups, scaleups, and enterprises accelerate growth through
@@ -67,8 +56,8 @@ export function Hero() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.5 }}
-            className="mx-auto mb-4 max-w-2xl text-lg text-muted md:text-xl"
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="mx-auto mb-6 max-w-xl text-lg leading-relaxed text-muted"
           >
             Trusted by top venture firms, we build global growth engines that
             scale fast and adapt to change.
@@ -77,65 +66,39 @@ export function Hero() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.6 }}
-            className="mx-auto mb-8 max-w-2xl text-lg font-medium text-foreground md:text-xl"
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="mx-auto mb-12 max-w-xl text-lg leading-relaxed text-foreground"
           >
             Our mission is to bring our partners defensible growth, regardless
             of company size or stage.
           </motion.p>
 
-          {/* CTA Buttons */}
+          {/* CTA Button */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.7 }}
-            className="flex flex-col items-center justify-center gap-4 sm:flex-row"
+            transition={{ duration: 0.6, delay: 0.5 }}
           >
             <Button
               onClick={() => scrollToSection("#contact")}
               variant="primary"
               size="lg"
-              className="w-full sm:w-auto"
             >
               Get in Touch
-            </Button>
-            <Button
-              onClick={() => scrollToSection("#services")}
-              variant="outline"
-              size="lg"
-              className="w-full sm:w-auto"
-            >
-              See Our Approach
             </Button>
           </motion.div>
         </div>
 
         {/* Client Logos */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.9 }}
-          className="mt-16"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.7 }}
+          className="mt-24 w-full"
         >
           <ClientLogos />
         </motion.div>
       </Container>
-
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1.2 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-      >
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
-          className="flex h-10 w-6 items-start justify-center rounded-full border-2 border-foreground/20 p-2"
-        >
-          <motion.div className="h-2 w-1 rounded-full bg-foreground/40" />
-        </motion.div>
-      </motion.div>
     </section>
   );
 }
